@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println( euler.PrimeSieve(100) )
+	fmt.Println( euler.Euler3() )
 }
