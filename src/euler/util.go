@@ -48,17 +48,23 @@ func primeSieve(limit int) []int {
 	
 	for true {
 		prime = nums[primeIndex]
-		for i := 0; i < len(nums); i++ {
-			if nums[i] % prime == 0 && nums[i] > prime {
-				nums = append(nums[:i], nums[i+1:]...)
-			}
-		}
+		nums = primeSieveFilter(nums, prime)
 		primeIndex++
 		if primeIndex >= len(nums) {
 			break
 		}
 	}
 	return nums
+}
+
+func primeSieveFilter(nums []int, mod int) []int {
+	var result []int
+	for _, v := range nums {
+		if v % mod != 0 || v == mod {
+			result = append(result, v)
+		}
+	}
+	return result
 }
 
 func reverseString(s string) string {
