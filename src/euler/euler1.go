@@ -9,7 +9,7 @@ package euler
 */
 
 func Euler1() int {
-	return Sum( naturalNumbers(1000, []int{3,5}) )
+	return sum( naturalNumbers(1000, []int{3,5}) )
 }
 
 /**

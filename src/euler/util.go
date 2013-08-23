@@ -12,7 +12,7 @@ import (
 /**
 * Return the sum of all elements in array
 */
-func Sum(x []int) int {
+func sum(x []int) int {
 	total := 0
 	for _, i := range x {
 		total += i
@@ -20,7 +20,7 @@ func Sum(x []int) int {
 	return total
 }
 
-func IsPrime(num int) bool {
+func isPrime(num int) bool {
 	sq := int(math.Ceil( math.Sqrt( float64(num) )))
 	prime := true
 	
@@ -38,7 +38,7 @@ func IsPrime(num int) bool {
 	return prime
 }
 
-func PrimeSieve(limit int) []int {
+func primeSieve(limit int) []int {
 	var nums []int
 	prime := 2
 	primeIndex := 0
@@ -59,4 +59,16 @@ func PrimeSieve(limit int) []int {
 		}
 	}
 	return nums
+}
+
+func reverseString(s string) string {
+    runes := []rune(s)
+    for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+        runes[i], runes[j] = runes[j], runes[i]
+    }
+    return string(runes)
+}
+
+func isPalindrome(s string) bool {
+	return s == reverseString(s)
 }
