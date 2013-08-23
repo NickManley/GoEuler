@@ -5,6 +5,6 @@ import (
 )
 
 func Euler7() int {
-	x := primeSieve(200000)
+	x := primeSieve(1000000)
 	return x[10000]
 }

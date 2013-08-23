@@ -39,32 +39,28 @@ func isPrime(num int) bool {
 }
 
 func primeSieve(limit int) []int {
-	var nums []int
-	prime := 2
-	primeIndex := 0
-	for i := 2; i <= limit; i++ {
-		nums = append(nums, i)
-	}
+	sqLimit := int(math.Ceil(math.Sqrt(float64(limit))))
+	array := make([]bool, limit)
+	output := make([]int, 0)
 	
-	for true {
-		prime = nums[primeIndex]
-		nums = primeSieveFilter(nums, prime)
-		primeIndex++
-		if primeIndex >= len(nums) {
-			break
-		}
+	for i := 0; i < limit; i++ {
+		array[i] = true
 	}
-	return nums
-}
 
-func primeSieveFilter(nums []int, mod int) []int {
-	var result []int
-	for _, v := range nums {
-		if v % mod != 0 || v == mod {
-			result = append(result, v)
+	for i := 2; i <= sqLimit; i++ {
+		if array[i] {
+			for j := i*i; j < limit; j += i {
+				array[j] = false
+			}
 		}
 	}
-	return result
+
+	for i := 2; i < limit; i++ {
+		if array[i] {
+			output = append(output, i)
+		}
+	}
+	return output
 }
 
 func reverseString(s string) string {
