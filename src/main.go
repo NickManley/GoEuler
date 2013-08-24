@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println( euler.Euler12() )
+	fmt.Println( euler.Euler13() )
 }

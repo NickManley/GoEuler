@@ -60,6 +60,9 @@ func listFactors(num int) []int {
 	return removeDuplicates(result)
 }
 
+/**
+* removeDuplicates operates on a sorted list
+*/
 func removeDuplicates(values []int) []int {
 	var result []int
 	for _,v := range values {
