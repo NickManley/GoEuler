@@ -38,7 +38,7 @@ func Euler14() int {
 }
 
 func collatz(start int) []int {
-	var nums []int
+	nums := make([]int, 0, 1000)
 	nums = append(nums, start)
 	for true {
 		lastNum := nums[len(nums)-1]
