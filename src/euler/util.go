@@ -74,3 +74,13 @@ func reverseString(s string) string {
 func isPalindrome(s string) bool {
 	return s == reverseString(s)
 }
+
+func max(nums []int) int {
+	result := nums[0]
+	for _,v := range nums {
+		if v > result {
+			result = v
+		}
+	}
+	return result
+}

@@ -17,10 +17,10 @@ var gridMap map[string]int
 */
 func Euler15() int {
 	gridMap = make(map[string]int)
-	return trace(0,0)
+	return tracePath(0,0)
 }
 
-func trace(x int, y int) int {
+func tracePath(x int, y int) int {
 	i := 0
 	key := strconv.Itoa(x) + "x" + strconv.Itoa(y)
 	g := gridMap[key]
@@ -28,10 +28,10 @@ func trace(x int, y int) int {
 		return g
 	}
 	if x < gridSize {
-		i += trace(x + 1, y)
+		i += tracePath(x + 1, y)
 	}
 	if y < gridSize {
-		i += trace(x, y + 1)
+		i += tracePath(x, y + 1)
 	}
 	if x == gridSize && y == gridSize {
 		return 1
