@@ -11,7 +11,7 @@ import (
 * to adjacent numbers on the row below, Find the maximum total
 * from top to bottom of the triangle.
 *
-* NOTE: the triangle is actually equalateral.
+* NOTE: the triangle is actually equilateral.
 * See the appropriate project euler page. It's only
 * shown different for code formatting purposes.
 */
@@ -36,6 +36,7 @@ var triangle = [][]int{
 func Euler18() int {
 	triangleHeight := len(triangle)
 	
+	// subtract two so we start at second to last row
 	for i := triangleHeight-2; i >=0; i-- {
 		traceTriangle(i)
 	}
