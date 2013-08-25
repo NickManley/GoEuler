@@ -7,6 +7,7 @@ package euler
 
 import (
 	"math"
+	"math/big"
 )
 
 /**
@@ -83,4 +84,12 @@ func max(nums []int) int {
 		}
 	}
 	return result
+}
+
+func factorial(num int) big.Int {
+	result := big.NewInt(1)
+	for i := 2; i <= num; i++ {
+		result = result.Mul(result, big.NewInt(int64(i)))
+	}
+	return *result
 }
