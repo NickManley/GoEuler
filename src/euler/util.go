@@ -93,3 +93,19 @@ func factorial(num int) big.Int {
 	}
 	return *result
 }
+
+/**
+* removeDuplicates operates on a sorted list
+*/
+func removeDuplicates(values []int) []int {
+	var result []int
+	for _,v := range values {
+		i := len(result)-1
+		if i <= 0 {
+			result = append(result, v)
+		} else if result[i] != v {
+			result = append(result, v)
+		}
+	}
+	return result
+}
